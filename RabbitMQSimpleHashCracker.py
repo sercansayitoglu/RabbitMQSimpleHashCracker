@@ -11,7 +11,7 @@ base64ver = "GXU7y+PcmpkcjmggtiG+VeGy2Ye6KcCHbIy2GTYJfSDxHNYu" # give me the has
 
 
 
-print("\nCreated this script when doing pentest without a GPU; anyway I had to try just a small list, not much.")
+print("\nCreated this script while doing pentest without a GPU; anyway I had to try just a small list, not much.")
 print("\n\tBut, wanted to share it on github and it is here!")
 print("\nFor now, it is only cracking rabbit_password_hashing_sha256 type hashes but, if you change few places it is gonna work well :)\n\n")
 print("\tIf you have questions: @sercansayitoglu \n\n")
