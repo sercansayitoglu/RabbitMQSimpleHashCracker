@@ -1,6 +1,6 @@
 RabbitMQSimpleHashCracker
 
-Created this script when doing pentest without a GPU; anyway I had to try just a small list, not much.
+Created this script while doing pentest without a GPU; anyway I had to try just a small list, not much.
 
 But, wanted to share it on github and it is here!
 
