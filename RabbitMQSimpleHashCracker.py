@@ -31,7 +31,6 @@ def deleteLineFeed(line):
 
 
 def calculateHash(line, a):
-	line = deleteLineFeed(line)
 	utf8 = line.encode('utf-8').hex()
 	prepare = salt + utf8
 	prepare = bytes.fromhex(prepare)
@@ -40,8 +39,6 @@ def calculateHash(line, a):
 		print("\nFOUND THE PASSWORD!\nPassword is: " + line + "\n\nTurning off the engine slowly..")
 		global finishTheJob
 		finishTheJob = True
-		exit()
-	print("Attempt: " + str(a) + " : " + line + "                ", end="\r")
 
 
 decoded = base64.standard_b64decode(base64ver).hex()
@@ -60,11 +57,11 @@ file.close()
 a = 1
 with concurrent.futures.ThreadPoolExecutor(max_workers=multiprocessing.cpu_count()) as threadPoolCalculate:
 	for line in linebyline:
-		if finishTheJob:
-			exit()
+		line = deleteLineFeed(line)
+		print("Attempt: " + str(a) + " : " + line + "                ", end="\r")
+		stat = finishTheJob
+		if stat:
+			break
 		threadPoolCalculate.submit(calculateHash, line, a)
 		a = a + 1
-	try:
-		concurrent.futures.wait(threadPoolCalculate, return_when=concurrent.futures.ALL_COMPLETED)
-	except:
-		pass
+	
