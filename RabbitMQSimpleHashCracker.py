@@ -30,7 +30,7 @@ def deleteLineFeed(line):
     return stringValue
 
 
-def calculateHash(line, a):
+def calculateHash(line):
 	utf8 = line.encode('utf-8').hex()
 	prepare = salt + utf8
 	prepare = bytes.fromhex(prepare)
@@ -63,6 +63,6 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=multiprocessing.cpu_count
 		stat = finishTheJob
 		if stat:
 			break
-		threadPoolCalculate.submit(calculateHash, line, a)
+		threadPoolCalculate.submit(calculateHash, line)
 		a = a + 1
 	
