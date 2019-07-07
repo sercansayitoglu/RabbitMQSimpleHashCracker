@@ -45,6 +45,7 @@ decoded = base64.standard_b64decode(base64ver).hex()
 salt = base64.standard_b64decode(base64ver).hex()[0:8]
 sha256 = base64.standard_b64decode(base64ver).hex()[8:]
 print("Core number: " + str(multiprocessing.cpu_count()))
+print("THE HASH: " + base64ver)
 print("DECODED: " + decoded)
 print("SALT: " + salt)
 print("SHA256: " + sha256)
